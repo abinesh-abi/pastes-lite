@@ -19,16 +19,19 @@ pnpm dev
 bun dev
 ```
 
-web site will available at [http://localhost:3000](http://localhost:3000) 
+The website will be available at [http://localhost:3000](http://localhost:3000) 
 
 ## Persistence Layer
 In Pastes Lite, I have achieved data persistence using Redis to store and remove data according to TTL (Time to Live) and time limits.
 
 
-## apis
- 
- / - Load html page and option to fill pastes text and submit
- /p/<id> - load Html and show the Past
- /api/healthz/ - use for check server works proprly
- /api/pastes/   - post method to create pastes
- /api/pastes/<id>   - get method to retrieve pastes
+
+ ## APIs
+
+| Endpoint               | Description                                         |
+|-----------------------|-----------------------------------------------------|
+| `/`                   | Load HTML page with an option to fill in paste text and submit. |
+| `/p/<id>`             | Load HTML and display the specific paste.          |
+| `/api/healthz/`      | Used to check if the server is working properly.   |
+| `/api/pastes/`       | POST method to create a new paste.                 |
+| `/api/pastes/<id>`    | GET method to retrieve a specific paste.            |
