@@ -1,4 +1,5 @@
 import redis from "@/lib/redis";
+import { DbContent } from "@/types/global";
 import { NextRequest, NextResponse } from "next/server";
 
 type Response = {
