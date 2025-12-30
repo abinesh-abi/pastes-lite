@@ -2,22 +2,14 @@ import redis from "@/lib/redis";
 import { v4 as uuidv4 } from "uuid";
 import { NextRequest, NextResponse } from "next/server";
 import CONFIG from "@/config/CONFIG";
+import { DbContent, PastFormBody, PastResponse } from "@/types/global";
 
-type PastBody = {
-  content: string;
-  ttl_seconds: number;
-  max_views: number;
-};
 
-type PastResponse = {
-  id: string;
-  url: string;
-};
 
 export async function POST(req: NextRequest) {
   try {
     const uniqueKey = uuidv4(); // uniquid
-    const { content, max_views, ttl_seconds }: Partial<PastBody> =
+    const { content, max_views, ttl_seconds }: Partial<PastFormBody> =
       await req.json();
 
     if (!content)
